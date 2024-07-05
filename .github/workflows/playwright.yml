@@ -19,7 +19,7 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install
       - name: Start Vite server
-        run: npm run dev 
+        run: npm run dev &
         env:
           CI: true
       - name: Wait for Vite to start
