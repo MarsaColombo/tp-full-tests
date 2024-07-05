@@ -47,19 +47,19 @@ test('should update result when inputs change and button is clicked again', asyn
   await page.locator('#soleil').fill('2');
   await page.locator('#btn-show').click();
 
-  await expect(page.locator('.heure-value')).toHaveText('6');
+  await expect(page.locator('.heure-value')).toHaveText('nuight');
 });
 
 test('should handle all possible combinations correctly', async ({ page }) => {
   const combinations = [
-    { lune: 1, terre: 1, soleil: 1, expected: '0' },
-    { lune: 1, terre: 1, soleil: 2, expected: '5' },
-    { lune: 1, terre: 2, soleil: 1, expected: '0' },
-    { lune: 1, terre: 2, soleil: 2, expected: '6' },
-    { lune: 2, terre: 1, soleil: 1, expected: '1' },
-    { lune: 2, terre: 1, soleil: 2, expected: '4' },
-    { lune: 2, terre: 2, soleil: 1, expected: '1' },
-    { lune: 2, terre: 2, soleil: 2, expected: '6' },
+    { lune: 1, terre: 1, soleil: 1, expected: 'mortin' },
+    { lune: 1, terre: 1, soleil: 2, expected: 'soirning' },
+    { lune: 1, terre: 2, soleil: 1, expected: 'mortin' },
+    { lune: 1, terre: 2, soleil: 2, expected: 'nuight' },
+    { lune: 2, terre: 1, soleil: 1, expected: 'mortin' },
+    { lune: 2, terre: 1, soleil: 2, expected: 'aprenoon' },
+    { lune: 2, terre: 2, soleil: 1, expected: 'mortin' },
+    { lune: 2, terre: 2, soleil: 2, expected: 'nuight' },
   ];
 
   for (const combo of combinations) {
